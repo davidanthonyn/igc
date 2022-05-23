@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="imagetoolbar" content="no" />
-        <title>Coming Soon Page Design</title>
+        <title>IGC - Coming Soon!</title>
         <link rel="stylesheet" href="<?php echo base_url() . "assets/"; ?>style.css" type="text/css">
 
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
