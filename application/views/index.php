@@ -1,46 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<hmtl>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon! | IGC</title>
-    <link href="assets/style.css" rel="stylesheet" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="imagetoolbar" content="no" />
+        <title>Coming Soon Page Design</title>
+        <link rel="stylesheet" href="<?php echo base_url() . "assets/"; ?>style.css" type="text/css">
 
-<body>
-    <header>
-        <div class="hero">
-            <p>Indonesia Gaming Community</p>
-            <h1>Coming Soon!</h1>
-            <hr>
-            <p id="launch"></p>
-        </div>
-    </header>
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
 
-</body>
-<script>
-    var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
+            header {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url(<?php echo base_url() . "assets/images/image.png"; ?>);
+                height: 100vh;
+                background-position: center;
+                background-size: cover;
+            }
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            .Soon {
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                text-align: center;
+                font-family: "Fira Sans", sans-serif;
+            }
 
-        document.getElementById("launch").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            h1 {
+                font-size: 65px;
+                letter-spacing: 15px;
+            }
 
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("launch").innerHTML = "expired";
-        }
-    }, 1000);
-</script>
+            hr {
+                width: 50%;
+                margin: 30px auto;
+                border: 1.5px solid #fff;
+            }
 
-</html>
+            p {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            #launch {
+                font-size: 40px;
+                word-spacing: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="Soon">
+                <img src="<?php echo base_url() . "assets/images/Indonesia Gaming Community.png"; ?>" width="180" height="180">
+                <br><br>
+                <!--<p>Indonesia Gaming Community</p>-->
+                <h1>COMING SOON</h1>
+                <hr>
+                <p id="launch"></p>
+            </div>
+        </header>
+    </body>
+
+
+
+    <script>
+        var countDownDate = new Date("July 1, 2022 00:00:00").getTime();
+
+        var x = setInterval(function() {
+
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("launch").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('launch').innerHTML = "EXPIRED";
+            }
+
+        }, 1000);
+    </script>
+</hmtl>
